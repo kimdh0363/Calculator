@@ -1,5 +1,8 @@
 package operator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public enum Operator {
     PLUS('+') {
         @Override
@@ -25,7 +28,7 @@ public enum Operator {
             return num1 / num2;
         }
     };
-
+    abstract public double calculation(double num1, double num2);
 
     private final char inputOperator;
     Operator(char inputOperator) {
@@ -34,5 +37,17 @@ public enum Operator {
     public char getOperator(char operator) {
         return inputOperator;
     }
-    abstract public double calculation(double num1, double num2);
+
+    private final List<Operator> operators = new ArrayList<Operator>();
+    static {
+        for (int i = 0; i <1; i++) {
+
+        }
+    }
+
+    public Operator checkOperator(char operator) {
+
+        return MINUS;
+    }
+
 };
