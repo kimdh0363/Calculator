@@ -1,6 +1,8 @@
 package operator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public enum Operator {
@@ -30,24 +32,25 @@ public enum Operator {
     };
     abstract public double calculation(double num1, double num2);
 
-    private final char inputOperator;
+    private final char operator;
     Operator(char inputOperator) {
-        this.inputOperator = inputOperator;
-    }
-    public char getOperator(char operator) {
-        return inputOperator;
+        this.operator = inputOperator;
     }
 
-    private final List<Operator> operators = new ArrayList<Operator>();
+    private final static List<Operator> operators = new ArrayList<Operator>();
     static {
-        for (int i = 0; i <1; i++) {
-
-        }
+        operators.addAll(Arrays.asList(values()));
     }
 
-    public Operator checkOperator(char operator) {
+    public Operator checkOperator(char inputOperator) {
+        Operator currentOperator = null;
+        for (int i = 0; i < operators.size(); i++) {
+            if (operators.get(i).operator == inputOperator) {
+                currentOperator = operators.get(i);
+            }
+        }
+        return currentOperator;
 
-        return MINUS;
     }
 
 };

@@ -1,6 +1,6 @@
-package characterValidator;
+package checkCharacter;
 
-public enum CharacterValidator {
+public enum CheckCharacter {
     COMMA(','),
     COLON(':'),
     SPACE(' '),
@@ -11,7 +11,7 @@ public enum CharacterValidator {
 
     private final char separator;
 
-    CharacterValidator(char separator) {
+    CheckCharacter(char separator) {
         this.separator = separator;
     }
 
@@ -19,13 +19,13 @@ public enum CharacterValidator {
         return inputSeparator == COMMA.separator || inputSeparator == COLON.separator;
     }
     public boolean isSpace(char inputSeparator) {
-        return inputSeparator == separator;
+        return inputSeparator == SPACE.separator;
     }
     public boolean isPlus(char inputSeparator) {
-        return inputSeparator == separator;
+        return inputSeparator == PLUS.separator;
     }
     public boolean isMinus(char inputSeparator) {
-        return inputSeparator == separator;
+        return inputSeparator == MINUS.separator;
     }
     public boolean isMultiply(char inputSeparator) {
         return inputSeparator == MULTIPLY.separator;

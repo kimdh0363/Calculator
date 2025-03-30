@@ -1,9 +1,7 @@
 package calculator;
-import characterValidator.CharacterValidator;
-import operator.Operator;
 import parser.NumberParser;
 import parser.OperatorParser;
-import operator.Operator.*;
+
 import java.util.List;
 
 public class Calculator {
